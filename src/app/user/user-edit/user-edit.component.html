@@ -1,0 +1,13 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <input type="hidden" name="id" [ngModel]="user.id">
+  <!-- <input type="hidden" name="att" [ngModel]="9"> -->
+  <table>
+    <tr><th>Id</th><td>{{user.id}}</td></tr>
+    <tr><th>Name</th><td><input type="text" name="name" [ngModel]="user.name"></td></tr>
+    <tr><th>Email</th><td><input type="text" name="email" [ngModel]="user.email"></td></tr>
+  </table>
+  <button type="submit">OK</button>
+  <button routerLink="/users">Cancel</button>
+</form>
+
+<!-- #f=[ngForm]・・・ Formタグ内のngModelのすべての値をf.valueとして、順番にオブジェクト型で取得することができる-->
